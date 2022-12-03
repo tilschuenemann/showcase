@@ -8,8 +8,8 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 streamlit = "^1.14.1"
-spotifycodegen = "^0.1.2"
-movieparse = "^0.2.0"
+spotify-codegen = "^0.3.0"
+movieparse = "^0.4.0"
 
 [tool.black]
 line-length=120

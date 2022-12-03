@@ -1,8 +1,9 @@
 import streamlit as st
-from spotifycodegen.main import spotifycodegen
+from spotifycodegen.main import SpotifyCodeGen
 
 st.set_page_config(layout="wide")
-st.write("<style>div.block-container{padding-top:2rem;}</style>", unsafe_allow_html=True)
+st.write(
+    "<style>div.block-container{padding-top:2rem;}</style>", unsafe_allow_html=True)
 
 st.title("spotify codegen")
 
@@ -11,15 +12,17 @@ st.markdown(
 )
 
 st.markdown("""---""")
-scg = spotifycodegen()
+scg = SpotifyCodeGen()
 
 left_column, right_column = st.columns([1, 3])
 
 with left_column:
-    by_option = st.radio(label="Generate Spotify Code with:", options=["URI", "URL", "Query"])
+    by_option = st.radio(label="Generate Spotify Code with:",
+                         options=["URI", "URL", "Query"])
     user_input = st.text_area(label=by_option)
     if by_option == "Query":
-        search_type = st.radio(label="Query for:", options=["album", "artist", "track"], horizontal=True)
+        search_type = st.radio(label="Query for:", options=[
+                               "album", "artist", "track"], horizontal=True)
     submit_button = st.button("Submit")
 
     try:
